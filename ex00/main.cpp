@@ -1,4 +1,4 @@
-#include "Scalar.hpp"
+#include "ScalarConverter.hpp"
 #include <iostream>
 
 int main(int argc, char **argv)
@@ -8,6 +8,6 @@ int main(int argc, char **argv)
         std::cout << "./convert <literal>" << std::endl;
         return 1;
     }
-    Scalar::convert(argv[1]);
+    ScalarConverter::convert(argv[1]);
     return 0;
 }
