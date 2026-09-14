@@ -28,28 +28,40 @@ void identify(Base& p){
         (void)a;
         std::cout << "A" << std::endl;
     }
-    catch{
-        std::cout << "Could not cast A" << std::endl;
+    catch(std::exception &e){
+        std::cout << "Could not cast A. Error: " << e.what() << std::endl;
     }
     try{
         B &b = dynamic_cast<B&>(p);
         (void)b;
         std::cout << "B" << std::endl;
     }
-    catch{
-        std::cout << "Could not cast B" << std::endl;
+    catch(std::exception &e){
+        std::cout << "Could not cast B. Error: " << e.what() << std::endl;
     }
     try{
         C &c = dynamic_cast<C&>(p);
         (void)c;
         std::cout << "C" << std::endl;
     }
-    catch{
-        std::cout << "Could not cast C" << std::endl;
+    catch(std::exception &e){
+        std::cout << "Could not cast C. Error: " << e.what() << std::endl;
     }
 }
 
 int main(void)
 {
-
+    srand(time(NULL));
+    for (int i = 0; i < 9; i++)
+    {
+        std::cout << "--- Round " << i << " ---" << std::endl;
+        Base *b = generate();
+        Base &ref = *b;
+        std::cout << "pointer identify: ";
+        identify(b);
+        std::cout << "reference identify:" << std::endl;
+        identify(ref);
+        delete(b);
+    }
+    return 0;
 }

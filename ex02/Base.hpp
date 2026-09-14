@@ -3,7 +3,9 @@
 
 #include <string>
 #include <iostream>
-#include <random>
+#include <cstdlib>
+#include <exception>
+#include <ctime>
 
 class Base{
     public:

@@ -1,6 +1,6 @@
 NAME = Base
 
-SRC =  base.cpp main.cpp A.cpp B.cpp C.cpp
+SRC =  Base.cpp main.cpp 
 
 CPP = c++
 
